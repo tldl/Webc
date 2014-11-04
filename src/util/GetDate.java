@@ -5,9 +5,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-/**
- * Created by Administrator on 14-5-1.
- */
 public class GetDate {
 
     public static String getDatetimeString(Date date) {

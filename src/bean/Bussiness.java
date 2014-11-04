@@ -1,8 +1,5 @@
 package bean;
 
-/**
- * Created by Administrator on 2014/11/4 0004.
- */
 
 
 import java.sql.*;
@@ -103,7 +100,7 @@ public class Bussiness {
 
     }
 
-    public List<Agenda> findAll() {
+    public List<Agenda> findAll(){
         List<Agenda> list = new ArrayList<Agenda>();
         try {
             rs = stmt.executeQuery("select * from Agenda");
