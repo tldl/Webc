@@ -1,0 +1,8 @@
+已完成：
+    团队规划任务；
+    安装 Intellij IDEA 和 Git;
+    学习使用github;
+未来计划：
+    学习 Servlet 基础知识；
+感想：
+    无。
