@@ -1,4 +1,4 @@
-package test;
+package sample;
 
 import bean.Bussiness;
 
