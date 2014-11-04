@@ -36,7 +36,7 @@ public class Bussiness {
             stmt.execute("INSERT  into Agenda (title,note,startDate)values ('"
                     + agenda.getTitle() + "','"
                     + agenda.getNote() + "','"
-                    + agenda.getStartDate() + "'");
+                    + agenda.getStartDate() + "')");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -118,6 +118,8 @@ public class Bussiness {
         System.out.println();
         return list;
     }
+
+
 
 }
 

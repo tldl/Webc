@@ -1,6 +1,6 @@
 package network;
 
-import Config.Constant;
+import config.Constant;
 import bean.Agenda;
 import bean.Bussiness;
 
