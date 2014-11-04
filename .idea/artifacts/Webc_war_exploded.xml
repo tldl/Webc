@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Webc:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Webc_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Webc/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Webc" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
