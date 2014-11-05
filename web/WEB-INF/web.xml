@@ -3,4 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <servlet>
+        <display-name>LoginService</display-name>
+        <servlet-name>LoginService</servlet-name>
+        <servlet-class>network.LoginService</servlet-class>
+    </servlet>
+    <servlet>
+        <display-name>FindService</display-name>
+        <servlet-name>FindService</servlet-name>
+        <servlet-class>network.FindService</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Find</servlet-name>
+        <servlet-class>network.Find</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Find</servlet-name>
+        <url-pattern>/Find</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

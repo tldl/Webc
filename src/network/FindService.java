@@ -1,12 +1,11 @@
 package network;
 
-import config.Constant;
 import bean.Agenda;
 import bean.Bussiness;
+import config.Constant;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -16,10 +15,9 @@ import java.util.Date;
 /**
  * Created by Administrator on 2014/11/4 0004.
  */
-public class FindAgenda extends HttpServlet {
+public class FindService extends Service {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.service(req, resp);
         int id = 0;
         String title, note;
         Date date;
@@ -31,7 +29,6 @@ public class FindAgenda extends HttpServlet {
             resp.setContentType("text/html");
             Agenda agenda = null;
             try {
-
                 Bussiness bussiness = new Bussiness();
                 agenda = bussiness.findById(id);
                 output.println("<h3>Record found<br>" + agenda);
