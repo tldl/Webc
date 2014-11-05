@@ -1,19 +1,14 @@
 package network;
 
-import bean.Agenda;
-import bean.Bussiness;
 import bean.User;
 import bean.UserBussiness;
-import config.Constant;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 
 /**
  * Created by Administrator on 2014/11/5 0005.
@@ -23,7 +18,12 @@ public class Find extends HttpServlet {
         System.out.println("out");
         String userName, userPsd;
         String address = null;
-        userName = req.getParameter("userId");
+        userName=null;
+        userName = req.getParameter("userName");
+        System.out.println("userName : " + userName);
+        if (userName == null) {
+
+        }
         if (userName != null) {
             PrintWriter output = resp.getWriter();
             resp.setContentType("text/html");
@@ -34,14 +34,17 @@ public class Find extends HttpServlet {
                 output.println("<h3>Record found<br>" + user);
             } catch (Exception e) {
                 e.printStackTrace();
-                output.println("”√ªßŒ¥’“µΩ");
+                output.println("wrong");
             }
             req.setAttribute("User", user);
-            address = ".login.jsp";
+            address = "index.jsp";
             output.close();
         }
-        RequestDispatcher dispatcher = req.getRequestDispatcher(address);
-        dispatcher.forward(req, resp);
+       /* RequestDispatcher dispatcher = req.getRequestDispatcher(address);
+        dispatcher.forward(req, resp);*/
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
+
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
