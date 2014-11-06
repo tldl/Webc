@@ -13,16 +13,18 @@ import java.io.PrintWriter;
 /**
  * Created by Administrator on 2014/11/5 0005.
  */
-public class Find extends HttpServlet {
+public class FindUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("out");
-        String userName, userPsd;
+        resp.setContentType("text;html;charset=utf-8");
+        String userName, userPsd = null;
         String address = null;
-        userName=null;
+        userName = null;
         userName = req.getParameter("userName");
+        userName = req.getParameter("userPsd");
         System.out.println("userName : " + userName);
         if (userName == null) {
-
+            System.out.println("userName 为空" + userName);
+            return;
         }
         if (userName != null) {
             PrintWriter output = resp.getWriter();
@@ -31,6 +33,15 @@ public class Find extends HttpServlet {
             try {
                 UserBussiness bussiness = new UserBussiness();
                 user = bussiness.findByName(userName);
+                if (user == null) {
+                    System.out.println("用户不存在");
+                    return;
+                }
+                if (userPsd != null && userPsd.equals(user.getUserPsd())) {
+                    System.out.println("密码错误");
+                    return;
+                }
+
                 output.println("<h3>Record found<br>" + user);
             } catch (Exception e) {
                 e.printStackTrace();

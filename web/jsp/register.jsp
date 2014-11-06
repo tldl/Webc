@@ -6,15 +6,17 @@
     <title>Student Form</title>
 </head>
 <body>
-<h1>查找学生信息</h1>
+<h1>注册账号</h1>
 
 <FORM
-        ACTION=Find
+        ACTION=Register
         METHOD="post">
     <table border="0">
         <tr>
-            <td>Student ID:</td>
+            <td>用户名:</td>
             <td><input type="text" name="userName"/></td>
+            <td>密码:</td>
+            <td><input type="text" name="userPsd"/></td>
             <td><input type="submit" value="Submit" name="Submit"/></td>
         </tr>
     </table>

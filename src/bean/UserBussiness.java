@@ -38,7 +38,7 @@ public class UserBussiness {
             String sql = "insert into User (userName,userPsd) values ('"
                     + user.getUserName() + "', '"
                     + user.getUserPsd() + "')";
-            print(sql);
+            System.out.println(sql);
             stmt.execute(sql);
         } catch (SQLException e) {
             flag = false;

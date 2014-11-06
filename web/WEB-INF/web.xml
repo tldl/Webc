@@ -3,19 +3,56 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <filter>
+        <filter-name>Filter</filter-name>
+        <filter-class>network.Filter</filter-class>
+    </filter>
+
     <servlet>
-        <display-name>FindService</display-name>
-        <servlet-name>FindService</servlet-name>
-        <servlet-class>network.FindService</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Find</servlet-name>
-        <servlet-class>network.Find</servlet-class>
+        <display-name>FindAgenda</display-name>
+        <servlet-name>FindAgenda</servlet-name>
+        <servlet-class>network.FindAgenda</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>FindUser</servlet-name>
+        <servlet-class>network.FindUser</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>network.Login</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>Find</servlet-name>
-        <url-pattern>/Find</url-pattern>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>network.Register</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/Register</url-pattern>
+    </servlet-mapping>
+
+
+    <filter-mapping>
+        <filter-name>Filter</filter-name>
+        <url-pattern>/Filter</url-pattern>
+    </filter-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FindUser</servlet-name>
+        <url-pattern>/FindUser</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>FindAgenda</servlet-name>
+        <url-pattern>/FindAgenda</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
