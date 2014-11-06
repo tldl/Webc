@@ -21,7 +21,7 @@
 
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>network.Login</servlet-class>
+        <servlet-class>network.user.Login</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -31,8 +31,23 @@
 
     <servlet>
         <servlet-name>Register</servlet-name>
-        <servlet-class>network.Register</servlet-class>
+        <servlet-class>network.user.Register</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddAgenda</servlet-name>
+        <servlet-class>network.agenda.AddAgenda</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteAgenda</servlet-name>
+        <servlet-class>network.agenda.DeleteAgenda</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddAgenda</servlet-name>
+        <url-pattern>/AddAgenda</url-pattern>
+    </servlet-mapping>
+
+
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -53,6 +68,11 @@
     <servlet-mapping>
         <servlet-name>FindAgenda</servlet-name>
         <url-pattern>/FindAgenda</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeleteAgenda</servlet-name>
+        <url-pattern>/DeleteAgenda</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

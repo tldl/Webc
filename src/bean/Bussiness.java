@@ -1,7 +1,6 @@
 package bean;
 
 
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,27 +30,47 @@ public class Bussiness {
         }
     }
 
-    public void add(Agenda agenda) {
+    public boolean add(Agenda agenda) {
+        boolean flag = true;
+        String sql = "insert  into Agenda (title,content)values ('"
+                + agenda.getTitle() + "', '"
+                + agenda.getContent() + "')";
+        System.out.println(sql);
         try {
-            stmt.execute("INSERT  into Agenda (title,note,startDate)values ('"
-                    + agenda.getTitle() + "','"
-                    + agenda.getNote() + "','"
-                    + agenda.getStartDate() + "')");
+            stmt.execute(sql);
+
         } catch (SQLException e) {
+            flag = false;
             e.printStackTrace();
         }
-
+        return flag;
 
     }
 
-    public void delete(Agenda agenda) {
+    public boolean delete(Agenda agenda) {
+        boolean flag = true;
         String sql = "delete from Agenda where id =" + agenda.getId();
         try {
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
+            flag = false;
             e.printStackTrace();
         }
+        return flag;
     }
+
+    public boolean deleteByTitle(Agenda agenda) {
+        boolean flag = true;
+        String sql = "delete from Agenda where id = " + "'" + agenda.getTitle() + "'";
+        try {
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            flag = false;
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
 
     public boolean deleteById(int id) {
         boolean flag = true;
@@ -70,7 +89,7 @@ public class Bussiness {
         try {
             String sql = "update Agenda" +
                     " set title = '" + agenda.getTitle()
-                    + "', note = '" + agenda.getNote()
+                    + "', content = '" + agenda.getContent()
                     + "', startDate = '" + agenda.getStartDate() + "'";
             System.out.print(sql);
             stmt.executeUpdate(sql);
@@ -88,7 +107,7 @@ public class Bussiness {
             while (rs.next()) {
                 agenda.setId(rs.getInt("id"));
                 agenda.setTitle(rs.getString("title"));
-                agenda.setNote(rs.getString("note"));
+                agenda.setContent(rs.getString("content"));
                 agenda.setStartDate(rs.getDate("startDate"));
                 return agenda;
             }
@@ -100,7 +119,7 @@ public class Bussiness {
 
     }
 
-    public List<Agenda> findAll(){
+    public List<Agenda> findAll() {
         List<Agenda> list = new ArrayList<Agenda>();
         try {
             rs = stmt.executeQuery("select * from Agenda");
@@ -108,7 +127,7 @@ public class Bussiness {
                 Agenda agenda = new Agenda();
                 agenda.setId(rs.getInt("id"));
                 agenda.setTitle(rs.getString("title"));
-                agenda.setNote(rs.getString("note"));
+                agenda.setContent(rs.getString("content"));
                 agenda.setStartDate(rs.getDate("startDate"));
                 list.add(agenda);
             }
@@ -118,7 +137,6 @@ public class Bussiness {
         System.out.println();
         return list;
     }
-
 
 
 }

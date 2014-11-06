@@ -1,4 +1,4 @@
-package network;
+package network.user;
 
 import bean.User;
 import bean.UserBussiness;

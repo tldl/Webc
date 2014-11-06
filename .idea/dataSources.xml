@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="68581527">
+  <component name="DataSourceManagerImpl" format="xml" hash="1744689745">
     <data-source source="LOCAL" name="agenda" uuid="bdd631e7-0126-4b23-9023-dbe0fa5178f3">
       <driver-ref>odbc.sun</driver-ref>
       <synchronize>true</synchronize>

@@ -16,57 +16,14 @@ public class Agenda implements Serializable {
 
     private int id;
     private String title;
-    private String note;
-    private Date startDate;
+    private String content;
+    private Date startDate = new Date();
 
     private Date endDate;
     private int progress;
     private String category;
     private String top;
 
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    @Override
-    public String toString() {
-        return "Agenda{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", note='" + note + '\'' +
-                ", startDate=" + GetDate.getDatetimeString(startDate) +
-                '}';
-    }
-
-    public String getTop() {
-        return top;
-    }
-
-    public void setTop(String top) {
-        this.top = top;
-    }
-
-
-    public int getProgress() {
-        return progress;
-    }
-
-    public void setProgress(int progress) {
-        this.progress = progress;
-    }
 
     public int getId() {
         return id;
@@ -84,12 +41,36 @@ public class Agenda implements Serializable {
         this.title = title;
     }
 
-    public String getNote() {
-        return note;
+    public String getContent() {
+        return content;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
     }
 
     public String getCategory() {
@@ -99,5 +80,25 @@ public class Agenda implements Serializable {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    public String getTop() {
+        return top;
+    }
+
+    public void setTop(String top) {
+        this.top = top;
+    }
+
+    @Override
+    public String toString() {
+        return "Agenda{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", note='" + content + '\'' +
+                ", startDate=" + GetDate.getDatetimeString(startDate) +
+                '}';
+    }
+
+
 
 }

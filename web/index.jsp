@@ -6,6 +6,6 @@
       <link rel="stylesheet" type="text/css" >
   </head>
   <body>
-  <h3 class="message"><%=HelloWorld.getMessage()%></h3>
+  <h3 class="message"><"操作成功"></h3>
   </body>
 </html>
