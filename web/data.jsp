@@ -11,12 +11,16 @@
 	<table border="1" width="500px">
 		<tr>
 			<td>序号</td>
-			<td>数据</td>
+			<td>标题</td>
+            <td>内容</td>
+            <td>日期</td>
 		</tr>
-	<c:forEach items="${data}" var="str" varStatus="vs">
+	<c:forEach items="${account}" var="str" varStatus="vs">
 		<tr>
 			<td>${vs.count}</td>
 			<td>${str}</td>
+            <td>${str}</td>
+            <td>${str}</td>
 		</tr>
 	</c:forEach>
 	</table>

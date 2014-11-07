@@ -34,7 +34,7 @@ public class TestServlet extends HttpServlet {
         for(int i = 0; i < max; i++){
             list.add("测试数据"+ i);
         }
-        request.setAttribute("data", list);
+        request.setAttribute("account", list);
         request.getRequestDispatcher("/data.jsp").forward(request, response);
     }
 

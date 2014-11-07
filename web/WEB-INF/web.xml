@@ -8,16 +8,6 @@
         <filter-class>network.Filter</filter-class>
     </filter>
 
-    <servlet>
-        <display-name>FindAgenda</display-name>
-        <servlet-name>FindAgenda</servlet-name>
-        <servlet-class>network.FindAgenda</servlet-class>
-    </servlet>
-
-    <servlet>
-        <servlet-name>FindUser</servlet-name>
-        <servlet-class>network.FindUser</servlet-class>
-    </servlet>
 
     <servlet>
         <servlet-name>Login</servlet-name>
@@ -45,6 +35,16 @@
         <servlet-name>TestServlet</servlet-name>
         <servlet-class>network.TestServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FindAgenda</servlet-name>
+        <servlet-class>network.agenda.FindAgenda</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>FindAgenda</servlet-name>
+        <url-pattern>/FindAgenda</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>AddAgenda</servlet-name>
@@ -66,16 +66,8 @@
         <url-pattern>/Filter</url-pattern>
     </filter-mapping>
 
-    <servlet-mapping>
-        <servlet-name>FindUser</servlet-name>
-        <url-pattern>/FindUser</url-pattern>
-    </servlet-mapping>
 
 
-    <servlet-mapping>
-        <servlet-name>FindAgenda</servlet-name>
-        <url-pattern>/FindAgenda</url-pattern>
-    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>DeleteAgenda</servlet-name>

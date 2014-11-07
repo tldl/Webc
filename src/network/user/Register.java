@@ -19,8 +19,14 @@ public class Register extends UserService {
         if (mBussiness.add(mUser)) {
             System.out.println("注册成功 User : " + mUser);
             mAddress = "index.jsp";
-            req.getRequestDispatcher(mAddress).forward(req, resp);
+
         }
+        else
+        {
+            System.out.println("注册失败 User : " + mUser);
+            mAddress = "404.jsp";
+        }
+        req.getRequestDispatcher(mAddress).forward(req, resp);
         output.close();
     }
 
