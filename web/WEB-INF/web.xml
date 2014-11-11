@@ -47,9 +47,18 @@
         <servlet-name>NotifyUser</servlet-name>
         <servlet-class>network.user.NotifyUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>JumpPage</servlet-name>
+        <servlet-class>network.JumpPage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NotifyUser</servlet-name>
         <url-pattern>/NotifyUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>JumpPage</servlet-name>
+        <url-pattern>/JumpPage</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
