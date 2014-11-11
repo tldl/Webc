@@ -19,12 +19,13 @@ public class FindAgenda extends AgendaService {
         list = mBussiness.findAll();
         System.out.println(list);
 
-        if (mBussiness.add(mAgenda)) {
-            System.out.println("添加日程成功");
-            mAddress = "index.jsp";
+        if (list != null) {
+            System.out.println("查找日程成功");
+            mAddress = "show.jsp";
+            req.setAttribute("agendalist", list);
             req.getRequestDispatcher(mAddress).forward(req, resp);
         } else {
-            System.out.println("添加日程失败");
+            System.out.println("查找日程失败");
         }
     }
 
