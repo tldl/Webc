@@ -15,7 +15,7 @@ public class JumpPage extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         req.setCharacterEncoding("utf-8");
         String desPage;
-        desPage = req.getParameter("desPage");
+        desPage = req.getParameter("desPage")+".jsp";
         if (desPage == null) {
             desPage = "404.jsp";
         } else {
