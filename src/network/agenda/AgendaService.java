@@ -32,16 +32,21 @@ public class AgendaService extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.print("delete start");
+        System.out.println("post start");
         resp.setContentType("text;html;charset=utf-8");
         req.setCharacterEncoding("utf-8");
-        mAgenda = new Agenda();
-        mBussiness = new Bussiness();
-        mId = Integer.valueOf(req.getParameter("id"));
-        mTitle = req.getParameter("title");
-        mContent = req.getParameter("content");
+        try {
+            mAgenda = new Agenda();
+            mBussiness = new Bussiness();
+            mId = Integer.valueOf(req.getParameter("id"));
+            mTitle = req.getParameter("title");
+            mContent = req.getParameter("content");
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            System.out.println("post wrong");
+        }
 
-
+        System.out.println("post end");
         //  mDate = new Date(req.getDateHeader("startDate"));
 
         if (mTitle == null) {

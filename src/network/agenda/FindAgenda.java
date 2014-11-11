@@ -12,13 +12,13 @@ import java.util.List;
 public class FindAgenda extends AgendaService {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
-
+        System.out.print("find agenda start");
         List<Agenda> list = mBussiness.findAll();
         System.out.println(list);
 
         if (list != null) {
             System.out.println("查找日程成功");
-            mAddress = "/show.jsp";
+            mAddress = "show.jsp";
             req.setAttribute("agendalist", list);
             System.out.println(list);
             req.getRequestDispatcher(mAddress).forward(req, resp);

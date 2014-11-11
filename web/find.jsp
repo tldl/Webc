@@ -13,8 +13,8 @@
 </head>
 <body>
 <div>
-    <input type="button" value="查找" onclick="doSearch()"/>&nbsp;
-    <input type="button" value="clear" onclick="$('#agendalist').html('')"/>
+    <input type="button" value="查询日程" onclick="doSearch()"/>&nbsp;
+    <input type="button" value="清除日程" onclick="$('#agendalist').html('')"/>
 </div>
 <div id="agendalist"></div>
 </body>
