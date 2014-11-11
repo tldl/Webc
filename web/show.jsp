@@ -25,10 +25,14 @@
     </c:forEach>
 </table>
 <br>
-<form method="post" action="DeleteAgenda.jsp">
-    <label for="agendaID">请输入过期的日程ID：(^_^)</label>
-    <input type = "text" name = "agendaID">
-    <input type = "submit" name = "Submit" value = "删除">
+<form method="post" action=DeleteAgenda>
+    <table border = "0">
+    <tr>
+    <td>请输入过期的日程ID：(^_^)</td>
+   <td> <input type = "text" name = "id"></td>
+   <td> <input type = "submit" name = "Submit" value = "删除"></td>
+    </tr>
+    </table>
  </form>
 </body>
 </html>
