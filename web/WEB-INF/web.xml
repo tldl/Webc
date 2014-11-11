@@ -39,6 +39,14 @@
         <servlet-name>FindAgenda</servlet-name>
         <servlet-class>network.agenda.FindAgenda</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NotifyAgenda</servlet-name>
+        <servlet-class>network.agenda.NotifyAgenda</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NotifyUser</servlet-name>
+        <servlet-class>network.user.NotifyUser</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -49,6 +57,10 @@
     <servlet-mapping>
         <servlet-name>AddAgenda</servlet-name>
         <url-pattern>/AddAgenda</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NotifyAgenda</servlet-name>
+        <url-pattern>/NotifyAgenda</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TestServlet</servlet-name>
@@ -65,8 +77,6 @@
         <filter-name>Filter</filter-name>
         <url-pattern>/Filter</url-pattern>
     </filter-mapping>
-
-
 
 
     <servlet-mapping>

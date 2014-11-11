@@ -1,7 +1,7 @@
 package bean;
 
 
-import util.GetDate;
+import util.DateUtils;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -23,6 +23,10 @@ public class Agenda implements Serializable {
     private int progress;
     private String category;
     private String top;
+
+    public Agenda() {
+        setStartDate(startDate);
+    }
 
 
     public int getId() {
@@ -95,10 +99,9 @@ public class Agenda implements Serializable {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", note='" + content + '\'' +
-                ", startDate=" + GetDate.getDatetimeString(startDate) +
+                ", startDate=" + DateUtils.getDatetimeString(startDate) +
                 '}';
     }
-
 
 
 }

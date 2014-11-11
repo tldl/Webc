@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 public class Login extends UserService {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
-        PrintWriter output = resp.getWriter();
+        req.setCharacterEncoding("UTF-8");
         mUser = mBussiness.findByName(mUserName);
         if (mUser == null) {
             System.out.println("用户不存在");
@@ -23,7 +23,6 @@ public class Login extends UserService {
             mAddress = "find.jsp";
             req.getRequestDispatcher(mAddress).forward(req, resp);
         }
-        output.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

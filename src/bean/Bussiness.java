@@ -1,6 +1,8 @@
 package bean;
 
 
+import util.DateUtils;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +33,13 @@ public class Bussiness {
     }
 
     public boolean add(Agenda agenda) {
+        System.out.println(agenda);
         boolean flag = true;
-        String sql = "insert  into Agenda (title,content)values ('"
+        String sql = "insert  into Agenda (title,content,startDate)values ('"
                 + agenda.getTitle() + "', '"
-                + agenda.getContent() + "')";
+                + agenda.getContent() + "', "
+                + DateUtils.getDatetimeString() + ")";
+
         System.out.println(sql);
         try {
             stmt.execute(sql);
@@ -85,7 +90,8 @@ public class Bussiness {
 
     }
 
-    public void update(Agenda agenda) {
+    public boolean update(Agenda agenda) {
+        boolean flag = true;
         try {
             String sql = "update Agenda" +
                     " set title = '" + agenda.getTitle()
@@ -94,8 +100,10 @@ public class Bussiness {
             System.out.print(sql);
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
+            flag = false;
             e.printStackTrace();
         }
+        return flag;
 
     }
 
