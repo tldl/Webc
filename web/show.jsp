@@ -20,7 +20,7 @@
             <td>${str.id}</td>
             <td>${str.title}</td>
             <td>${str.content}</td>
-
+            <td>${str.startDate}</td>
         </tr>
     </c:forEach>
 </table>

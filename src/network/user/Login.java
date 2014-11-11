@@ -20,7 +20,7 @@ public class Login extends UserService {
             System.out.println("密码错误");
         } else {
             System.out.println("登录成功 User : " + mUser);
-            mAddress = "index.jsp";
+            mAddress = "find.jsp";
             req.getRequestDispatcher(mAddress).forward(req, resp);
         }
         output.close();

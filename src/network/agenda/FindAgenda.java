@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,8 +14,8 @@ import java.util.List;
 public class FindAgenda extends AgendaService {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
-        List<Agenda> list = new ArrayList<Agenda>();
-        list = mBussiness.findAll();
+
+        List<Agenda> list = mBussiness.findAll();
         System.out.println(list);
 
         if (list != null) {
