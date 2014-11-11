@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class GetDate {
+public class DateUtils {
 
     public static String getDatetimeString(Date date) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -15,37 +15,37 @@ public class GetDate {
     public static String getDatetimeString() {
         Date date = new Date();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        return format.format(date) + " " + getWeek();
+        return "#" + format.format(date) + "#";
     }
 
     public static String getDate() {
         final Calendar c = Calendar.getInstance();
         c.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
-        String mYear = String.valueOf(c.get(Calendar.YEAR)); // »ñÈ¡µ±Ç°Äê·İ
-        String mMonth = String.valueOf(c.get(Calendar.MONTH) + 1);// »ñÈ¡µ±Ç°ÔÂ·İ
-        String mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));// »ñÈ¡µ±Ç°ÔÂ·İµÄÈÕÆÚºÅÂë
+        String mYear = String.valueOf(c.get(Calendar.YEAR)); // è·å–å½“å‰å¹´ä»½
+        String mMonth = String.valueOf(c.get(Calendar.MONTH) + 1);// è·å–å½“å‰æœˆä»½
+        String mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));// è·å–å½“å‰æœˆä»½çš„æ—¥æœŸå·ç 
         String mWay = String.valueOf(c.get(Calendar.DAY_OF_WEEK));
         if ("1".equals(mWay)) {
-            mWay = "Ìì";
+            mWay = "å¤©";
         } else if ("2".equals(mWay)) {
-            mWay = "Ò»";
+            mWay = "ä¸€";
         } else if ("3".equals(mWay)) {
-            mWay = "¶ş";
+            mWay = "äºŒ";
         } else if ("4".equals(mWay)) {
-            mWay = "Èı";
+            mWay = "ä¸‰";
         } else if ("5".equals(mWay)) {
-            mWay = "ËÄ";
+            mWay = "å››";
         } else if ("6".equals(mWay)) {
-            mWay = "Îå";
+            mWay = "äº”";
         } else if ("7".equals(mWay)) {
-            mWay = "Áù";
+            mWay = "å…­";
         }
         if (c.get(Calendar.MONTH) + 1 < 10)
             mMonth = "0" + mMonth;
         if (c.get(Calendar.DAY_OF_MONTH) < 10)
             mDay = "0" + mDay;
         System.out.printf("");
-        String str = mYear + "-" + mMonth + "-" + mDay + " " + "ĞÇÆÚ" + mWay;
+        String str = mYear + "-" + mMonth + "-" + mDay + " " + "æ˜ŸæœŸ" + mWay;
         System.out.printf(str);
         return str;
 
@@ -56,21 +56,21 @@ public class GetDate {
         c.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
         String myWeek = String.valueOf(c.get(Calendar.DAY_OF_WEEK));
         if ("1".equals(myWeek)) {
-            myWeek = "Ìì";
+            myWeek = "å¤©";
         } else if ("2".equals(myWeek)) {
-            myWeek = "Ò»";
+            myWeek = "ä¸€";
         } else if ("3".equals(myWeek)) {
-            myWeek = "¶ş";
+            myWeek = "äºŒ";
         } else if ("4".equals(myWeek)) {
-            myWeek = "Èı";
+            myWeek = "ä¸‰";
         } else if ("5".equals(myWeek)) {
-            myWeek = "ËÄ";
+            myWeek = "å››";
         } else if ("6".equals(myWeek)) {
-            myWeek = "Îå";
+            myWeek = "äº”";
         } else if ("7".equals(myWeek)) {
-            myWeek = "Áù";
+            myWeek = "å…­";
         }
-        return "ĞÇÆÚ" + myWeek;
+        return "æ˜ŸæœŸ" + myWeek;
 
     }
 
@@ -84,31 +84,31 @@ public class GetDate {
 
         switch (w % 7) {
             case 0:
-                myWeek = "Ìì";
+                myWeek = "å¤©";
                 break;
             case 1:
-                myWeek = "Ò»";
+                myWeek = "ä¸€";
                 break;
             case 2:
-                myWeek = "¶ş";
+                myWeek = "äºŒ";
                 break;
             case 3:
-                myWeek = "Èı";
+                myWeek = "ä¸‰";
                 break;
             case 4:
-                myWeek = "ËÄ";
+                myWeek = "å››";
                 break;
             case 5:
-                myWeek = "Îå";
+                myWeek = "äº”";
                 break;
             case 6:
-                myWeek = "Áù";
+                myWeek = "å…­";
                 break;
             default:
                 break;
         }
 
-        return "ĞÇÆÚ" + myWeek;
+        return "æ˜ŸæœŸ" + myWeek;
     }
 
     public static String getMonthOfYear(String month) {

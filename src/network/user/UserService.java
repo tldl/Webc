@@ -28,6 +28,7 @@ public class UserService extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text;html;charset=utf-8");
+        resp.setCharacterEncoding("utf-8");
         mUser = new User();
         mBussiness = new UserBussiness();
         mUserName = req.getParameter("userName");

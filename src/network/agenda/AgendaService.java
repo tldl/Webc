@@ -21,6 +21,7 @@ public class AgendaService extends HttpServlet {
     protected String mContent;
     protected Date mDate;
     protected String mAddress;
+    protected int mId;
 
 
     @Override
@@ -31,18 +32,23 @@ public class AgendaService extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.print("delete start");
         resp.setContentType("text;html;charset=utf-8");
         req.setCharacterEncoding("utf-8");
         mAgenda = new Agenda();
         mBussiness = new Bussiness();
+        mId = Integer.valueOf(req.getParameter("id"));
         mTitle = req.getParameter("title");
         mContent = req.getParameter("content");
+
+
         //  mDate = new Date(req.getDateHeader("startDate"));
 
         if (mTitle == null) {
             System.out.println("title为空");
+            System.out.println(" Id : " + mId + " Title : " + mTitle + "  Content : " + mContent + "  Date : " + mDate);
         } else {
-            System.out.println(" Title : " + mTitle + "  Content : " + mContent + "  Date : " + mDate);
+            System.out.println(" Id : " + mId + " Title : " + mTitle + "  Content : " + mContent + "  Date : " + mDate);
         }
     }
 }
