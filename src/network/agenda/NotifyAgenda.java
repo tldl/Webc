@@ -11,6 +11,8 @@ import java.io.IOException;
 public class NotifyAgenda extends AgendaService {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
+        mTitle = req.getParameter("title");
+        mContent = req.getParameter("content");
         mAgenda.setTitle(mTitle);
         mAgenda.setContent(mContent);
         // mAgenda.setStartDate(mDate);

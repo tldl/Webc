@@ -12,9 +12,6 @@ public class DeleteAgenda extends AgendaService {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
-        mAgenda.setTitle(mTitle);
-        mAgenda.setContent(mContent);
-        // mAgenda.setStartDate(mDate);
         System.out.println(mAgenda);
         if (mBussiness.deleteById(mId)) {
             System.out.println("删除日程成功");

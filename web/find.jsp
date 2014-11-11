@@ -21,7 +21,7 @@
     <form method="post" action=JumpPage>
         <table border = "0">
             <tr>
-                <td> <input type = "hidden" name = "desPage" value="AddAgenda.jsp"></td>
+                <td> <input type = "hidden" name = "desPage" value="addagenda.jsp"></td>
                 <td> <input type = "submit" name = "Submit" value = "添加日程">&nbsp;</td>
 
                 <td><input type="button" value="查询日程" onclick="doSearch()"/>&nbsp;</td>

@@ -35,12 +35,10 @@ public class AgendaService extends HttpServlet {
         System.out.println("post start");
         resp.setContentType("text;html;charset=utf-8");
         req.setCharacterEncoding("utf-8");
+        mAgenda = new Agenda();
+        mBussiness = new Bussiness();
         try {
-            mAgenda = new Agenda();
-            mBussiness = new Bussiness();
             mId = Integer.valueOf(req.getParameter("id"));
-            mTitle = req.getParameter("title");
-            mContent = req.getParameter("content");
         } catch (NumberFormatException e) {
             e.printStackTrace();
             System.out.println("post wrong");
