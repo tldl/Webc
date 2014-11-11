@@ -17,10 +17,10 @@
     </tr>
     <c:forEach items="${agendalist}" var="str" varStatus="vs">
         <tr>
-            <td>${vs.count}</td>
-            <td>${str}</td>
-            <td>${str}</td>
-            <td>${str}</td>
+            <td>${str.id}</td>
+            <td>${str.title}</td>
+            <td>${str.content}</td>
+
         </tr>
     </c:forEach>
 </table>

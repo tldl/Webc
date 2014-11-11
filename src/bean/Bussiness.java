@@ -120,6 +120,7 @@ public class Bussiness {
     }
 
     public List<Agenda> findAll() {
+        System.out.println("find start");
         List<Agenda> list = new ArrayList<Agenda>();
         try {
             rs = stmt.executeQuery("select * from Agenda");
@@ -128,10 +129,10 @@ public class Bussiness {
                 agenda.setId(rs.getInt("id"));
                 agenda.setTitle(rs.getString("title"));
                 agenda.setContent(rs.getString("content"));
-                agenda.setStartDate(rs.getDate("startDate"));
                 list.add(agenda);
             }
         } catch (SQLException e) {
+            System.out.println("查找失败");
             e.printStackTrace();
         }
         System.out.println();

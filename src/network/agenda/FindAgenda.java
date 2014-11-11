@@ -14,15 +14,16 @@ import java.util.List;
  */
 public class FindAgenda extends AgendaService {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        super.doPost(req, resp);
         List<Agenda> list = new ArrayList<Agenda>();
         list = mBussiness.findAll();
         System.out.println(list);
 
         if (list != null) {
             System.out.println("查找日程成功");
-            mAddress = "show.jsp";
+            mAddress = "/show.jsp";
             req.setAttribute("agendalist", list);
+            System.out.println(list);
             req.getRequestDispatcher(mAddress).forward(req, resp);
         } else {
             System.out.println("查找日程失败");
@@ -30,6 +31,6 @@ public class FindAgenda extends AgendaService {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request, response);
     }
 }

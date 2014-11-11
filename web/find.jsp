@@ -6,8 +6,10 @@
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
     <script type="text/javascript">
         function doSearch(){
+            alert(11111);
             //使用ajax发送异常请求到TestServlet。把返回的 HTML文件代码插入ID为data的元素中
-            $("#agendalist").load('FindAgenda?'+5);
+            $("#agendalist").load('FindAgenda');
+            alert(11111);
         }
     </script>
 </head>
@@ -16,6 +18,6 @@
     <input type="button" value="查询数据" onclick="doSearch()"/>&nbsp;
     <input type="button" value="清除数据" onclick="$('#agendalist').html('')"/>
 </div>
-<div id="account"></div>
+<div id="agendalist"></div>
 </body>
 </html>

@@ -19,8 +19,7 @@
 		<tr>
 			<td>${vs.count}</td>
 			<td>${str}</td>
-            <td>${str}</td>
-            <td>${str}</td>
+
 		</tr>
 	</c:forEach>
 	</table>
