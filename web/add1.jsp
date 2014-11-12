@@ -58,6 +58,7 @@
             <label for="mima"></label>
             <input type="password" name="mima" id="mima"/>
         </p>
+
         <p class="submit"><input type="submit"><img src="images/login.png" width="91" height="79"/></p>
         <span class="submit"></span>
     </form>
