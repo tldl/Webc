@@ -23,6 +23,7 @@
                 注册账号</h3>
         </div>
         <div class="container">
+            <form ACTION=Register METHOD="post">
             <p>
                 <span>用户名：</span><input type="text" class="username txt"/>
             </p>
@@ -35,7 +36,7 @@
                 <a><input type="submit" value="注册账号" name="Submit"/></a>
                 <a href="/">返回首页</a>
             </p>
-
+            </form>
         </div>
     </div>
 </div>
