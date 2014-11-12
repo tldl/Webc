@@ -14,10 +14,10 @@
         </style>
 </head>
 <body>
-<div class="main">
+<div class = "main">
     <div class="content">
         <div class="header">
-            <img src="http://images.qq190.com/images/logo.gif"/>
+            <img src = "http://images.qq190.com/images/logo.gif"/>
 
             <h3>
                 注册账号</h3>
