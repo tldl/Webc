@@ -19,13 +19,11 @@
 <div>
     <body>
     <form method="post" action=JumpPage>
-        <table border = "0">
+        <table border="0">
             <tr>
-                <td> <input type = "hidden" name = "desPage" value="addagenda"></td>
-                <td> <input type = "submit" name = "Submit" value = "添加日程">&nbsp;</td>
-
+                <td><input type="button" value="添加日程" onclick="window.location.href='addagenda.jsp';"/>
                 <td><input type="button" value="查询日程" onclick="doSearch()"/>&nbsp;</td>
-                 <td><input type="button" value="清除日程" onclick="$('#agendalist').html('')"/></td>
+                <td><input type="button" value="清除日程" onclick="$('#agendalist').html('')"/></td>
             </tr>
         </table>
     </form>
