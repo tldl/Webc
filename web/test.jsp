@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>注册账号</title>
+    <title>注 册 账 号(^_^)</title>
     <link href="http://images.qq190.com/CSS/getpwd.css"
           rel="stylesheet" type="text/css"/>
     <link href="http://images.qq190.com/CSS/common/msgbox.css"
