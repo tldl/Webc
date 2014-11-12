@@ -17,14 +17,14 @@
     </tr>
     <c:forEach items="${agendalist}" var="str" varStatus="vs">
         <tr>
+            <form method="post" action=DeleteAgenda>
+                <table border = "0">
             <td>${str.id}</td>
+            <td> <input type = "hidden" name = "id" value=${str.id}></td>
             <td>${str.title}</td>
             <td>${str.content}</td>
             <td>${str.startDate}</td>
-            <form method="post" action=DeleteAgenda>
-                <table border = "0">
-                        <td> <input type = "hidden" name = "id" value=${str.id}></td>
-                        <td> <input type = "submit" name = "Submit" value = "删除">&nbsp;</td>
+            <td> <input type = "submit" name = "Submit" value = "删除">&nbsp;</td>
                 </table>
             </form>
         </tr>
