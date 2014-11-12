@@ -6,7 +6,7 @@
     <link href="http://images.qq190.com/CSS/getpwd.css"
           rel="stylesheet" type="text/css"/>
     <link href="http://images.qq190.com/CSS/common/msgbox.css"
-          rel="stylesheet" type="text/css"/>
+          rel="stylesheet"   type="text/css"/>
     <style>
         p#a{
             padding-left:100px;
