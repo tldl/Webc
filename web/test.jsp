@@ -6,36 +6,36 @@
     <link href="http://images.qq190.com/CSS/getpwd.css"
           rel="stylesheet" type="text/css"/>
     <link href="http://images.qq190.com/CSS/common/msgbox.css"
-               rel="stylesheet"   type="text/css"/>
+          rel="stylesheet" type="text/css"/>
     <style>
-        p#a{
-            padding-left:100px;
+        p#a {
+            padding-left: 100px;
         }
-        </style>
+    </style>
 </head>
 <body>
-<div class = "main">
+<div class="main">
     <div class="content">
         <div class="header">
-            <img src = "images/logo.png"/>
+            <img src="images/logo.png"/>
 
             <h3>
                 注册账号</h3>
         </div>
         <div class="container">
             <form ACTION=Register METHOD="post">
-            <p>
-                <span>用户名：</span><input type="text" class="username txt"/>
-            </p>
+                <p>
+                    <span>用户名：</span><input type="text" class="username txt"/>
+                </p>
 
-            <p>
-                <span>密码 ：</span><input type="password" class="userpwd txt" />
-            </p>
+                <p>
+                    <span>密码 ：</span><input type="password" class="userpwd txt"/>
+                </p>
 
-            <p id="a">
-                <a><input type="submit" value="注册账号" name="Submit"/></a>
-                <a href="/">返回首页</a>
-            </p>
+                <p id="a">
+                    <a><input type="submit" value="注册账号" name="Submit"/></a>
+                    <a href="/">返回首页</a>
+                </p>
             </form>
         </div>
     </div>

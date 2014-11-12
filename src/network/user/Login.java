@@ -17,6 +17,7 @@ public class Login extends UserService {
             mAddress = "404.jsp";
             System.out.println("用户不存在");
         } else if (!mUser.getUserPsd().equals(mUserPsd)) {
+            mAddress = "404.jsp";
             System.out.println("密码错误");
         } else {
             System.out.println("登录成功 User : " + mUser);
