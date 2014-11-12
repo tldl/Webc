@@ -10,15 +10,15 @@
           rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div>
-    <div>
-        <div>
+<div class="main">
+    <div class="content">
+        <div class="header">
             <img src="http://images.qq190.com/images/logo.gif"/>
 
             <h3>
                 注册账号</h3>
         </div>
-        <div>
+        <div class="container">
             <FORM
                 ACTION=Register
                 METHOD="post">
