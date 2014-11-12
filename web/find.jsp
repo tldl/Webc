@@ -9,10 +9,6 @@
             //使用ajax发送异常请求到TestServlet。把返回的 HTML文件代码插入ID为data的元素中
             $("#agendalist").load('FindAgenda');
         }
-        function doAdd() {
-            //使用ajax发送异常请求到TestServlet。把返回的 HTML文件代码插入ID为data的元素中
-            $("#agendalist").load('FindAgenda');
-        }
     </script>
 </head>
 <body>
