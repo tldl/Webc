@@ -47,19 +47,19 @@
 <p><img src="images/background.jpg" width="767" height="569"/></p>
 
 <div id="signin">
-    <form id="form1" name="form1" method="post" action=Login>
-        <p id="form1">账号：
+    <form  method="post" action=Login>
+        <p id="form2">账号：
             <label for="name"></label>
             <input type="text" name="name" id="name"/>
         </p>
         <label for="m"></label>
 
-        <p id="form1">密码：
+        <p id="form3">密码：
             <label for="mima"></label>
             <input type="password" name="mima" id="mima"/>
         </p>
-
-        <p class="submit"><input type="submit"><img src="images/login.png" width="91" height="79"/></p>
+        <input type="submit"/>
+        <p class="submit"><img src="images/login.png" width="91" height="79"/></p>
         <span class="submit"></span>
     </form>
 </div>

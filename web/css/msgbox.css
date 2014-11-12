@@ -6,8 +6,8 @@
     font-weight: bold;
     font-size: 14px;
     color: #606060;
-    background-image: url("http://images.qq190.com//images/msgbox/gb_tip_layer.png");
-    _background-image: url("http://images.qq190.com//images/msgbox/gb_tip_layer_ie6.png");
+    background-image: url("http://images.qq190.com/images/msgbox/gb_tip_layer.png");
+    _background-image: url("http://images.qq190.com/images/msgbox/gb_tip_layer_ie6.png");
     background-repeat: no-repeat;
 }
 .zeng_msgbox_layer_wrap
