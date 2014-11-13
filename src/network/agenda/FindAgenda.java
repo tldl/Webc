@@ -18,7 +18,7 @@ public class FindAgenda extends AgendaService {
 
         if (list != null) {
             System.out.println("查找日程成功");
-            mAddress = "show.jsp";
+            mAddress = "showu.jsp";
             req.setAttribute("agendalist", list);
             System.out.println(list);
             req.getRequestDispatcher(mAddress).forward(req, resp);
