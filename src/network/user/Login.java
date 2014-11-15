@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -28,8 +29,12 @@ public class Login extends UserService {
             System.out.println("密码错误");
         } else {
             System.out.println("登录成功 User : " + mUser);
-            mAddress = "showu.jsp";
+         //   req.setAttribute("data", "1");
+         //   mAddress = "showu3.jsp";
         }
+      //  PrintWriter out;
+       // out = resp.getWriter();
+       // out.print("1");
         findAge(req, resp);
 
     }
@@ -51,7 +56,9 @@ public class Login extends UserService {
             System.out.println(list);
         } else {
             System.out.println("查找日程失败");
+
         }
+
         req.getRequestDispatcher(mAddress).forward(req, resp);
     }
 }

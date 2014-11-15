@@ -19,7 +19,7 @@ public class NotifyAgenda extends AgendaService {
         System.out.println(mAgenda);
         if (mBussiness.update(mAgenda)) {
             System.out.println("更新日程成功");
-            mAddress = "index.jsp";
+            mAddress = "login.jsp";
             req.getRequestDispatcher(mAddress).forward(req, resp);
         } else {
             System.out.println("删除日程失败");

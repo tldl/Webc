@@ -1,8 +1,6 @@
 package bean;
 
 
-import util.DateUtils;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +35,8 @@ public class Bussiness {
         boolean flag = true;
         String sql = "insert  into Agenda (title,content,startDate)values ('"
                 + agenda.getTitle() + "', '"
-                + agenda.getContent() + "', "
-                + DateUtils.getDatetimeString() + ")";
+                + agenda.getContent() + "', '"
+                + agenda.getStartDate() + "')";
 
         System.out.println(sql);
         try {
@@ -64,6 +62,7 @@ public class Bussiness {
         return flag;
     }
 
+    @Deprecated
     public boolean deleteByTitle(Agenda agenda) {
         boolean flag = true;
         String sql = "delete from Agenda where id = " + "'" + agenda.getTitle() + "'";
@@ -116,7 +115,7 @@ public class Bussiness {
                 agenda.setId(rs.getInt("id"));
                 agenda.setTitle(rs.getString("title"));
                 agenda.setContent(rs.getString("content"));
-                agenda.setStartDate(rs.getDate("startDate"));
+                agenda.setStartDate(rs.getString("startDate"));
                 return agenda;
             }
         } catch (SQLException e) {
@@ -136,7 +135,7 @@ public class Bussiness {
                 agenda.setId(rs.getInt("id"));
                 agenda.setTitle(rs.getString("title"));
                 agenda.setContent(rs.getString("content"));
-                agenda.setStartDate(rs.getDate("startDate"));
+                agenda.setStartDate(rs.getString("startDate"));
                 list.add(agenda);
             }
         } catch (SQLException e) {

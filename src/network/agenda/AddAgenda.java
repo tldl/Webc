@@ -13,13 +13,15 @@ public class AddAgenda extends AgendaService {
         super.doPost(req, resp);
         mTitle = req.getParameter("title");
         mContent = req.getParameter("content");
+        mDate=req.getParameter("date");
         mAgenda.setTitle(mTitle);
         mAgenda.setContent(mContent);
+        mAgenda.setStartDate(mDate);
        // mAgenda.setStartDate(mDate);
         System.out.println(mAgenda);
         if (mBussiness.add(mAgenda)) {
             System.out.println("添加日程成功");
-            mAddress = "index.jsp";
+            mAddress = "login.jsp";
             req.getRequestDispatcher(mAddress).forward(req, resp);
         }
         else

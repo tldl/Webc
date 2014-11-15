@@ -19,7 +19,7 @@ public class AgendaService extends HttpServlet {
 
     protected String mTitle;
     protected String mContent;
-    protected Date mDate;
+    protected String mDate;
     protected String mAddress;
     protected int mId;
 
@@ -32,26 +32,12 @@ public class AgendaService extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("post start");
         resp.setContentType("text;html;charset=utf-8");
         req.setCharacterEncoding("utf-8");
         mAgenda = new Agenda();
         mBussiness = new Bussiness();
-        try {
-            mId = Integer.valueOf(req.getParameter("id"));
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-            System.out.println("post wrong");
-        }
-
-        System.out.println("post end");
         //  mDate = new Date(req.getDateHeader("startDate"));
 
-        if (mTitle == null) {
-            System.out.println("title为空");
-            System.out.println(" Id : " + mId + " Title : " + mTitle + "  Content : " + mContent + "  Date : " + mDate);
-        } else {
-            System.out.println(" Id : " + mId + " Title : " + mTitle + "  Content : " + mContent + "  Date : " + mDate);
-        }
+
     }
 }

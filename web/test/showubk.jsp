@@ -6,25 +6,44 @@
 <meta charset="UTF-8">
 <title>Document</title>
 
-<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
 <script>
     /*以下为接收参数部分*/
     var record = new Array();
-    var num;
-    <c:forEach items="${agendalist}" var="str" varStatus="vs">
     record[${vs.index}] = new Array();
-    record[${vs.index}][0] = '${str.id}';
-    record[${vs.index}][1] = '${str.title}';
-    record[${vs.index}][2] = '${str.startDate}';
-    record[${vs.index}][3] = '${str.content}';
-    if (${vs.last}) {
-        num = ${vs.index}+1;
+    var num;
+    function doSearch() {
+        {
+            $.ajax({url: "FindAgenda", type: "post", dataType: "json",
+                        success: function (agendalist)
+                        {
+                            <c:forEach items="${agendalist}" var="str" varStatus="vs">
+                            alert(agendalist)
+                            record[${vs.index}][0] = '${str.id}';
+                            record[${vs.index}][1] = '${str.title}';
+                            record[${vs.index}][2] = '${str.startDate}';
+                            record[${vs.index}][3] = '${str.content}';
+                            if (${vs.last}) {
+                                num = ${vs.index}+1;
+                            }
+                            </c:forEach>
+                        }
+                        , error: function (data) {
+                            alert("网络错误，请联系管理员");
+                        }
+                    }
+            )
+
+
+        }
     }
-    </c:forEach>
+
+
 
     /*over*/
     var str = ['Sun', 'Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat'];
     function init() {
+
         $("#index").html("");
         $("#tbody").html("");
         for (var i = 0; i < num; i++) {
@@ -48,26 +67,18 @@
         $("#select1").attr("class", "onfo");
         $("#select2").attr("class", "inonfo");
         $("#select2").attr("onclick", "addwindow()");
+        alert("!");
         $("#addnew").attr("class", "invisual");
     }
     function addwindow() {
-
         $("#select1").attr("class", "inonfo");
-
         $("#select2").attr("class", "onfo");
-
         $("#select1").attr("onclick", "showwindow()");
-
         $("#select2").attr("onclick", "");
-
         $("#schedule").attr("class", "invisual");
-
         $("#addnew").attr("class", "");
-
         $("#context").attr("class", "invisual");
-
         inittime();
-
     }
     function inittime() {
         var time = new Date();
@@ -77,7 +88,7 @@
         var year = time.getFullYear();
         var hour = time.getHours();
         var min = time.getMinutes();
-        document.getElementById("addda").value = year + "-" + month + "-" + date + " " + hour + ":" + min + " " + str[day];
+        document.getElementById("addda").value = year + "-" + month + "-" + date + "-" + hour + ":" + min + "@" + str[day];
     }
     function showwindow() {
         $("#select1").attr("class", "onfo");
@@ -190,26 +201,22 @@
 
 #hide #delete_dialog p:nth-child(2) {
     position: absolute;
-    left: 60px;
-    top: 30px;
+    left: 50px;
+
 }
 
 #hide #delete_dialog p:nth-child(3) {
     position: absolute;
-    top: 60px;
-    left: 75px;
+    top: 40px;
+    left: 50px;
     cursor: pointer;
 }
 
 #hide #delete_dialog p:nth-child(4) {
     position: absolute;
-    top: 95px;
-    left: 75px;
+    top: 80px;
+    left: 50px;
     cursor: pointer;
-}
-
-#hide #delete_dialog p:nth-child(3):hover, #hide #delete_dialog p:nth-child(4):hover {
-    color: #00ff00;
 }
 
 #main {
@@ -355,7 +362,7 @@
 }
 
 #context table td {
-    height: 39px;
+    height: 44px;
     width: 106px;
     text-align: center;
     cursor: pointer;
@@ -398,7 +405,7 @@
 .v {
     float: left;
     width: 106px;
-    height: 39px;
+    height: 44px;
     background-image: url(../images/111.png);
     background-position: -16px -8px;
     opacity: 0.8;
@@ -408,7 +415,7 @@
 .p {
     float: left;
     width: 106px;
-    height: 39px;
+    height: 44px;
     background-image: url(../images/111.png);
     background-position: -128px -8px;
     color: rgb(66, 210, 91);
@@ -424,21 +431,18 @@
 }
 
 #context #index #returns span {
-    margin-top: 3px;
-    margin-right: 84px;
+    margin-top: 0px;
+    margin-right: 80px;
     margin-left: 0px;
-    font-size: 16px;
-    line-height: 1.1em;
+    font-size: 18px;
 }
 
 #context #index #returns {
-    background-image: url(../images/111.png);
-    background-position: -404px -9px;
+
 }
 
 #context #index #returns:hover {
-    color: #ffffff;
-    background-position: -541px -10px;
+
 }
 
 #menu {
@@ -550,7 +554,7 @@
 
     <div id="menu">
         <div id="select1" onclick="showwindow()">日程列表</div>
-        <div id="select2" onclick="addwindow()">添加日程</div>
+        <div id="select2" onclick="addwindow()">添加新的</div>
     </div>
     <div id="schedule">
         <table border="1px" cellspacing="0px">
@@ -587,7 +591,7 @@
         <div id="attend" class="invisual">
             <p>给你的日程想个标题吧~</p>
         </div>
-        <form id="new" target="noneiframe" onsubmit="return addnew()" action=AddAgenda method="post">
+        <form id="new" target="_blank	" onsubmit="return addnew()" action="RELEASE-NOTES.txt">
             <table cellpadding="10" cellspacing="20">
                 <tr>
                     <td><h2>标题:</h2></td>
@@ -599,7 +603,7 @@
                 </tr>
                 <tr>
                     <td><h2>内容:</h2></td>
-                    <td><textarea name="content" id="addcon" cols="100" form="new" rows="30"></textarea></td>
+                    <td><textarea name="context" id="addcon" cols="100" form="new" rows="30"></textarea></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="添加"></td>
@@ -615,7 +619,6 @@
 <script>
     $(function () {
         init();
-
     })
 </script>
 </body>

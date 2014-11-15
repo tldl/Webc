@@ -31,6 +31,7 @@ public class UserService extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         mUser = new User();
         mBussiness = new UserBussiness();
+
         mUserName = req.getParameter("userName");
         mUserPsd = req.getParameter("userPsd");
         if (mUserName == null) {
@@ -40,6 +41,7 @@ public class UserService extends HttpServlet {
         } else {
             System.out.println(" userName : " + mUserName + "  userPsd : " + mUserPsd);
         }
+
 
 
     }

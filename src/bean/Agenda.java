@@ -1,7 +1,7 @@
 package bean;
 
 
-import util.DateUtils;
+import util.Utils;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,16 +17,12 @@ public class Agenda implements Serializable {
     private int id;
     private String title;
     private String content;
-    private Date startDate = new Date();
+    private String startDate = Utils.getFormatDate(new Date());
 
     private Date endDate;
     private int progress;
     private String category;
     private String top;
-
-    public Agenda() {
-        setStartDate(startDate);
-    }
 
 
     public int getId() {
@@ -53,13 +49,6 @@ public class Agenda implements Serializable {
         this.content = content;
     }
 
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
 
     public Date getEndDate() {
         return endDate;
@@ -89,6 +78,14 @@ public class Agenda implements Serializable {
         return top;
     }
 
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
     public void setTop(String top) {
         this.top = top;
     }
@@ -99,7 +96,7 @@ public class Agenda implements Serializable {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", note='" + content + '\'' +
-                ", startDate=" + DateUtils.getDatetimeString(startDate) +
+                ", startDate=" + startDate +
                 '}';
     }
 

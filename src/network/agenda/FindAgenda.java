@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 
@@ -21,10 +22,11 @@ public class FindAgenda extends AgendaService {
             mAddress = "showu.jsp";
             req.setAttribute("agendalist", list);
             System.out.println(list);
-            req.getRequestDispatcher(mAddress).forward(req, resp);
         } else {
+            mAddress = "404.jsp";
             System.out.println("查找日程失败");
         }
+      //  req.getRequestDispatcher(mAddress).forward(req, resp);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

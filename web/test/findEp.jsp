@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Insert title here</title>
-    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
     <script type="text/javascript">
         function doSearch() {
             //使用ajax发送异常请求到TestServlet。把返回的 HTML文件代码插入ID为data的元素中

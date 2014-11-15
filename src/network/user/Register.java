@@ -18,8 +18,7 @@ public class Register extends UserService {
 
         if (mBussiness.add(mUser)) {
             System.out.println("注册成功 User : " + mUser);
-            mAddress = "index.jsp";
-
+            mAddress = "login.jsp";
         }
         else
         {
