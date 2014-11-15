@@ -1,4 +1,4 @@
-package sample;
+package test;
 
 import bean.User;
 import bean.UserBussiness;
