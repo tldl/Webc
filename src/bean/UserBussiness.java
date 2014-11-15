@@ -4,8 +4,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static net.mindview.util.Print.print;
-
 /**
  * Created by Administrator on 2014/11/4 0004.
  */
@@ -15,6 +13,24 @@ public class UserBussiness {
     public final static String URL = "jdbc:odbc:agenda";
     private static Statement stmt;
     private static ResultSet rs;
+
+    public static String getCurrentUser() {
+        if (user != null) {
+            System.out.println("getCurrentUser  ： " + user);
+            return user;
+        } else {
+            System.out.println("getCurrentUser default  ：" + "admin");
+            return "admin";
+        }
+    }
+
+    public static void setCurrentUser(String user) {
+        System.out.println("setCurrnetUser  ：" + "user");
+        UserBussiness.user = user;
+    }
+
+    private static String user;
+
 
     public UserBussiness() {
         init();
@@ -106,7 +122,7 @@ public class UserBussiness {
         User user = new User();
 
         try {
-            String sql="select * from User where userName = '" + name + "'";
+            String sql = "select * from User where userName = '" + name + "'";
             rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 user.setUserId(rs.getInt("userId"));

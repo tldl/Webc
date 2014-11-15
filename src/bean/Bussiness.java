@@ -50,6 +50,27 @@ public class Bussiness {
 
     }
 
+    public boolean addByUser(Agenda agenda) {
+        System.out.println(agenda);
+        boolean flag = true;
+        String sql = "insert  into Agenda (title,content,user,startDate)values ('"
+                + agenda.getTitle() + "', '"
+                + agenda.getContent() + "', '"
+                + UserBussiness.getCurrentUser() + "', '"
+                + agenda.getStartDate() + "')";
+
+        System.out.println(sql);
+        try {
+            stmt.execute(sql);
+
+        } catch (SQLException e) {
+            flag = false;
+            e.printStackTrace();
+        }
+        return flag;
+
+    }
+
     public boolean delete(Agenda agenda) {
         boolean flag = true;
         String sql = "delete from Agenda where id =" + agenda.getId();
@@ -63,9 +84,9 @@ public class Bussiness {
     }
 
     @Deprecated
-    public boolean deleteByTitle(Agenda agenda) {
+    public boolean deleteByTitle(String title) {
         boolean flag = true;
-        String sql = "delete from Agenda where id = " + "'" + agenda.getTitle() + "'";
+        String sql = "delete from Agenda where title = " + "'" + title + "'";
         try {
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
@@ -143,6 +164,26 @@ public class Bussiness {
             e.printStackTrace();
         }
         System.out.println();
+        return list;
+    }
+
+    public List<Agenda> findByUser() {
+        List<Agenda> list = new ArrayList<Agenda>();
+        try {
+            rs = stmt.executeQuery("select * from Agenda where user = '" + UserBussiness.getCurrentUser() + "'");
+            while (rs.next()) {
+                Agenda agenda = new Agenda();
+                agenda.setId(rs.getInt("id"));
+                agenda.setTitle(rs.getString("title"));
+                agenda.setContent(rs.getString("content"));
+                agenda.setStartDate(rs.getString("startDate"));
+                agenda.setUser(UserBussiness.getCurrentUser());
+                list.add(agenda);
+            }
+        } catch (SQLException e) {
+            System.out.println("查找失败");
+            e.printStackTrace();
+        }
         return list;
     }
 

@@ -11,7 +11,7 @@ import java.util.Date;
 public class Utils {
 
     public static String getFormatDate(Date date) {
-        DateFormat format = new SimpleDateFormat("yyyy/MM/dd/hh/mm/ss");
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String dateStr=format.format(date);
         System.out.println("getdate = " +dateStr);
         return dateStr;

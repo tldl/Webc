@@ -2,6 +2,7 @@ package network.user;
 
 import bean.Agenda;
 import bean.Bussiness;
+import bean.UserBussiness;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -34,21 +35,18 @@ public class Login extends UserService {
     private void findAge(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         mAgendaBussiness = new Bussiness();
         System.out.print("find agenda start");
-        List<Agenda> list = mAgendaBussiness.findAll();
-        System.out.println(list);
+
         if (mUser == null || !mUser.getUserPsd().equals(mUserPsd)) {
             mAddress = "404.jsp";
-        } else if (list != null) {
-            System.out.println("登录成功 User : " + mUser);
-            System.out.println("查找日程成功");
-            mAddress = "showu.jsp";
-            req.setAttribute("agendalist", list);
-            System.out.println(list);
         } else {
-            System.out.println("查找日程失败");
-
+            UserBussiness.setCurrentUser(mUser.getUserName());
+            List<Agenda> list = mAgendaBussiness.findByUser();
+            System.out.println("登录成功 User : " + mUser);
+            mAddress = "showu.jsp";
+            if (list != null)
+                req.setAttribute("agendalist", list);
+            System.out.println(list);
         }
-
         req.getRequestDispatcher(mAddress).forward(req, resp);
     }
 }

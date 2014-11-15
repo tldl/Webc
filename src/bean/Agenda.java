@@ -14,8 +14,18 @@ public class Agenda implements Serializable {
     public static final String IOP = "top";
 
     private int id;
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     private String title;
     private String content;
+    private String user;
     private String startDate = Utils.getFormatDate(new Date());
 
 
@@ -25,6 +35,17 @@ public class Agenda implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Agenda{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", user='" + user + '\'' +
+                ", startDate='" + startDate + '\'' +
+                '}';
     }
 
     public String getTitle() {
@@ -51,15 +72,6 @@ public class Agenda implements Serializable {
         this.startDate = startDate;
     }
 
-    @Override
-    public String toString() {
-        return "Agenda{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", note='" + content + '\'' +
-                ", startDate=" + startDate +
-                '}';
-    }
 
 
 }
