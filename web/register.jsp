@@ -25,7 +25,7 @@
         <div class="container">
             <form ACTION=Register METHOD="post">
                 <p>
-                    <span>用户名：</span><input type="text"  name="userName" class="userName"/>
+                    <span>用户名：</span><input type="text" name="userName" class="userName"/>
                 </p>
 
                 <p>
@@ -34,7 +34,7 @@
 
                 <p id="a">
                     <a><input type="submit" value="注册账号" name="Submit"/></a>
-                    <a href="/">前往登录</a>
+                    <a href="login.jsp">前往登录</a>
                 </p>
             </form>
         </div>

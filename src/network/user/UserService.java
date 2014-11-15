@@ -37,10 +37,11 @@ public class UserService extends HttpServlet {
         if (mUserName == null) {
             System.out.println("userName为空");
         } else if (mUserPsd == null) {
-            System.out.println("userName为空");
+            System.out.println("userPsd为空");
         } else {
             System.out.println(" userName : " + mUserName + "  userPsd : " + mUserPsd);
         }
+
 
 
 

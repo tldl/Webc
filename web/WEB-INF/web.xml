@@ -33,7 +33,7 @@
     </servlet>
     <servlet>
         <servlet-name>TestServlet</servlet-name>
-        <servlet-class>network.TestServlet</servlet-class>
+        <servlet-class>sample.TestServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>FindAgenda</servlet-name>

@@ -40,9 +40,14 @@
             top: 318px;
             right: 399px;
         }
-        input#aaaa{
-            width:91px;
-            height:79px;
+
+        input#aaaa {
+            width: 91px;
+            height: 79px;
+        }
+        input#reg {
+            width: 167px;
+            height: 52px;
         }
     </style>
 </head>
@@ -67,7 +72,10 @@
         <input type="image" src="images/login.png" alt="Submit" id="aaaa"/>
         <span class="submit"></span>
     </form>
+    <p class="register"></p>
+    <input type="image"  src="images/join.gif" onclick="window.location.href='register.jsp'" id="reg"/>
+    <span class="register"></span>
 </div>
-
 </body>
+
 <html>
