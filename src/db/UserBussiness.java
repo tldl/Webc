@@ -88,16 +88,20 @@ public class UserBussiness {
 
     }
 
-    public void update(User user) {
+    public boolean update(User user) {
+        boolean flag = true;
         try {
             String sql = "update User" +
                     " set userName = '" + user.getUserName()
-                    + "', userPsd = '" + user.getUserPsd() + "'";
+                    + "', userPsd = '" + user.getUserPsd() + "'" + " where userId = " + user.getUserId();
+
             System.out.print(sql);
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
+            flag = false;
             e.printStackTrace();
         }
+        return flag;
 
     }
 
