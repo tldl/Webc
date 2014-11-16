@@ -1,14 +1,13 @@
 package network.agenda;
 
-import bean.Agenda;
-import bean.Bussiness;
+import model.Agenda;
+import db.Bussiness;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Date;
 
 /**
  * Created by Administrator on 2014/11/6 0006.

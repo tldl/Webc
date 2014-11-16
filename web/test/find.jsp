@@ -27,26 +27,3 @@
 <div id="agendalist"></div>
 </body>
 </html>
-
-<script>
-    $("#reg-btn").click(function () {
-        $.ajax({
-            url: "/proxy/t",
-            data: senddata,
-            type: "post",
-            dataType: "json",
-            success: function (data) {
-                if (data.form_errors) {
-                    dispatchError(data.form_errors);
-                }
-                else {
-                    successReturn("${request.route_url('manage', action='eventable_list')}");
-                }
-            },
-            error: function (data) {
-                alert("网络错误，请联系管理员");
-            }
-        });
-
-    });
-</script>

@@ -1,13 +1,14 @@
 package network.user;
 
-import bean.User;
-import bean.UserBussiness;
+import db.UserBussiness;
+import model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created by Administrator on 2014/11/5 0005.
@@ -18,6 +19,7 @@ public class UserService extends HttpServlet {
     protected String mUserPsd;
     protected UserBussiness mBussiness;
     protected String mAddress;
+    protected PrintWriter mOut;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,7 +33,7 @@ public class UserService extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         mUser = new User();
         mBussiness = new UserBussiness();
-
+        mOut = resp.getWriter();
         mUserName = req.getParameter("userName");
         mUserPsd = req.getParameter("userPsd");
         if (mUserName == null) {
@@ -41,8 +43,6 @@ public class UserService extends HttpServlet {
         } else {
             System.out.println(" userName : " + mUserName + "  userPsd : " + mUserPsd);
         }
-
-
 
 
     }

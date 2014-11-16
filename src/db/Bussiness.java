@@ -1,5 +1,7 @@
-package bean;
+package db;
 
+
+import model.Agenda;
 
 import java.sql.*;
 import java.util.ArrayList;

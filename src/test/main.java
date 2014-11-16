@@ -1,7 +1,7 @@
 package test;
 
-import bean.User;
-import bean.UserBussiness;
+import model.User;
+import db.UserBussiness;
 
 
 public class main {

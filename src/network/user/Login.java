@@ -1,8 +1,8 @@
 package network.user;
 
-import bean.Agenda;
-import bean.Bussiness;
-import bean.UserBussiness;
+import model.Agenda;
+import db.Bussiness;
+import db.UserBussiness;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -37,7 +37,10 @@ public class Login extends UserService {
         System.out.print("find agenda start");
 
         if (mUser == null || !mUser.getUserPsd().equals(mUserPsd)) {
+           // mOut.print("alert(错误)");
             mAddress = "404.jsp";
+            return;
+
         } else {
             UserBussiness.setCurrentUser(mUser.getUserName());
             List<Agenda> list = mAgendaBussiness.findByUser();

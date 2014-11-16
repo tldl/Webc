@@ -1,6 +1,6 @@
 package network.agenda;
 
-import bean.UserBussiness;
+import db.UserBussiness;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

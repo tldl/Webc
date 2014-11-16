@@ -1,4 +1,4 @@
-package bean;
+package model;
 
 /**
  * Created by Administrator on 2014/11/4 0004.

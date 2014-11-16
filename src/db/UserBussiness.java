@@ -1,4 +1,6 @@
-package bean;
+package db;
+
+import model.User;
 
 import java.sql.*;
 import java.util.ArrayList;

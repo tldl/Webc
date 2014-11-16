@@ -1,12 +1,11 @@
 package network.agenda;
 
-import bean.Agenda;
+import model.Agenda;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 
